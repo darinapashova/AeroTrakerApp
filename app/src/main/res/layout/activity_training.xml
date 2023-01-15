@@ -1,0 +1,826 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundd"
+    tools:context=".Training">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/helloAthlete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textSize="30sp"
+                android:typeface="sans"
+
+                />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioGroup
+                android:id="@+id/rdTrainingPeriod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFDAB9"
+                    android:text="@string/choose_the_period_you_are_currently_in"
+                    android:textSize="27sp"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/rdbPreparatory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:checked="true"
+                    android:onClick="onRadioButtonClickedTrainingPeriod"
+                    android:padding="10dp"
+                    android:text="@string/preparatory"
+                    android:textSize="25sp"
+                    tools:ignore="UsingOnClickInXml" />
+
+                <RadioButton
+                    android:id="@+id/rdbPrecompetitive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:checked="true"
+                    android:onClick="onRadioButtonClickedTrainingPeriod"
+                    android:padding="10dp"
+                    android:text="@string/precompetitive"
+                    android:textSize="25sp"
+                    tools:ignore="UsingOnClickInXml" />
+
+                <RadioButton
+                    android:id="@+id/rdbCompetitive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:checked="true"
+                    android:onClick="onRadioButtonClickedTrainingPeriod"
+                    android:padding="10dp"
+                    android:text="@string/competitive"
+                    android:textSize="25sp"
+                    tools:ignore="UsingOnClickInXml" />
+
+                <RadioButton
+                    android:id="@+id/rdbPostcompetitive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:checked="true"
+                    android:onClick="onRadioButtonClickedTrainingPeriod"
+                    android:padding="10dp"
+                    android:text="@string/postcompetitive"
+                    android:textSize="25sp"
+                    tools:ignore="UsingOnClickInXml" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="#FFFFDAB9"
+                android:text="@string/warm_up"
+
+                android:textSize="27sp"
+                android:textStyle="italic" />
+
+            <EditText
+                android:id="@+id/timeWarmUpStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:autofillHints=""
+                android:background="#FFF0FFF0"
+                android:ems="10"
+                android:hint="@string/enter_warm_up_start_time"
+                android:imeOptions="actionNext"
+                android:inputType="time"
+                android:minHeight="48dp"
+                android:textColorHighlight="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/timeWarmUpEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:autofillHints=""
+                android:background="#FFF0FFF0"
+                android:ems="10"
+                android:hint="@string/enter_warm_up_end_time"
+                android:imeOptions="actionNext"
+                android:inputType="time"
+                android:minHeight="48dp"
+                android:textColorHighlight="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+
+            <RadioGroup
+                android:id="@+id/rdGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#FFFFDAB9"
+                    android:text="@string/choose_category"
+                    android:textSize="27sp"
+                    android:textStyle="italic" />
+
+                <RadioButton
+                    android:id="@+id/rdbIW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:checked="true"
+                    android:onClick="onRadioButtonClicked"
+                    android:padding="10dp"
+                    android:text="@string/Individual"
+                    android:textSize="25sp"
+                    tools:ignore="UsingOnClickInXml" />
+
+                <RadioButton
+                    android:id="@+id/rdbMP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:checked="true"
+                    android:onClick="onRadioButtonClicked"
+                    android:padding="10dp"
+                    android:text="@string/Mixed_pair"
+                    android:textSize="25sp"
+                    tools:ignore="UsingOnClickInXml" />
+
+                <RadioButton
+                    android:id="@+id/rdbTR"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:checked="true"
+                    android:onClick="onRadioButtonClicked"
+                    android:padding="10dp"
+                    android:text="@string/Trio"
+                    android:textSize="25sp"
+                    tools:ignore="UsingOnClickInXml" />
+
+                <RadioButton
+                    android:id="@+id/rdbGR"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:checked="true"
+                    android:onClick="onRadioButtonClicked"
+                    android:padding="10dp"
+                    android:text="@string/Group"
+                    android:textSize="25sp"
+                    tools:ignore="UsingOnClickInXml" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="#FFFFDAB9"
+                android:text="@string/main_part"
+                android:textSize="27sp"
+                android:textStyle="italic" />
+
+            <EditText
+                android:id="@+id/timeMainPartStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:autofillHints=""
+                android:background="#FFF0FFF0"
+                android:ems="10"
+                android:hint="@string/enter_main_part_start_time"
+                android:imeOptions="actionNext"
+                android:inputType="time"
+                android:minHeight="48dp"
+                android:textColorHighlight="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+
+            <EditText
+                android:id="@+id/timeMainPartEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:autofillHints=""
+                android:background="#FFF0FFF0"
+                android:ems="10"
+                android:hint="@string/enter_main_part_end_time"
+                android:imeOptions="actionDone"
+                android:inputType="time"
+                android:minHeight="48dp"
+                android:textColorHighlight="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="#FFFFDAB9"
+                android:text="@string/enter_the_big_parts_you_played"
+                android:textSize="27sp"
+                android:textStyle="italic" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="380dp"
+                android:layout_height="400dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                android:layout_gravity="center"
+                app:cardUseCompatPadding="true">
+
+                <TextView
+                    android:id="@+id/bigParts"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:padding="50dp"
+                    android:text="@string/big_parts"
+                    android:textAlignment="center"
+                    android:textColor="@color/teal_700"
+                    android:textColorHighlight="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/eightCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="150dp"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/eightcount"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/valueBPeightCounts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="310dp"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="0"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/upBtnEightCount"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="260dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/ic_up"
+                    android:onClick="IncreaseEightCountBP"
+                    tools:ignore="SpeakableTextPresentCheck,UsingOnClickInXml">
+
+                </androidx.appcompat.widget.AppCompatButton>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/downBtnEightCount"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="260dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/ic_down"
+                    android:onClick="DecreaseEightCountBP"
+                    tools:ignore="SpeakableTextPresentCheck,UsingOnClickInXml">
+
+                </androidx.appcompat.widget.AppCompatButton>
+
+                <TextView
+                    android:id="@+id/partnershipBP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="150dp"
+                    android:layout_marginTop="120dp"
+                    android:text="@string/partnership"
+                    android:textSize="20sp"
+
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/valueBPpartnership"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="310dp"
+                    android:layout_marginTop="120dp"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="0"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/upBtnG"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="260dp"
+                    android:layout_marginTop="95dp"
+                    android:background="@drawable/ic_up"
+                    android:onClick="IncreasePartnershipBP"
+                    tools:ignore="SpeakableTextPresentCheck,UsingOnClickInXml">
+
+                </androidx.appcompat.widget.AppCompatButton>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/downBtnG"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="260dp"
+                    android:layout_marginTop="135dp"
+                    android:background="@drawable/ic_down"
+                    android:onClick="DecreasePartnershipBP"
+                    tools:ignore="SpeakableTextPresentCheck,UsingOnClickInXml">
+
+                </androidx.appcompat.widget.AppCompatButton>
+
+                <TextView
+                    android:id="@+id/transitionGplus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="150dp"
+                    android:layout_marginTop="210dp"
+                    android:text="@string/GplusTransition"
+                    android:textSize="20sp"
+
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/valueBPtransitionGplus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="310dp"
+                    android:layout_marginTop="210dp"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="0"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/upBtnGplus"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="260dp"
+                    android:layout_marginTop="190dp"
+                    android:background="@drawable/ic_up"
+                    android:onClick="IncreaseGplusBP"
+                    tools:ignore="SpeakableTextPresentCheck,UsingOnClickInXml">
+
+                </androidx.appcompat.widget.AppCompatButton>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/downBtnGplus"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="260dp"
+                    android:layout_marginTop="230dp"
+                    android:background="@drawable/ic_down"
+                    android:onClick="DecreaseGplusBP"
+                    tools:ignore="SpeakableTextPresentCheck,UsingOnClickInXml">
+
+                </androidx.appcompat.widget.AppCompatButton>
+
+                <TextView
+                    android:id="@+id/element"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="150dp"
+                    android:layout_marginTop="290dp"
+                    android:text="@string/element"
+                    android:textSize="20sp"
+
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/valueBPelements"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="310dp"
+                    android:layout_marginTop="290dp"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="0"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/upelementBtn"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="260dp"
+                    android:layout_marginTop="270dp"
+                    android:background="@drawable/ic_up"
+                    android:onClick="IncreaseElementBP"
+                    tools:ignore="SpeakableTextPresentCheck,UsingOnClickInXml">
+
+                </androidx.appcompat.widget.AppCompatButton>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/downelementBtn"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="260dp"
+                    android:layout_marginTop="310dp"
+                    android:background="@drawable/ic_down"
+                    android:onClick="DecreaseElementBP"
+                    tools:ignore="SpeakableTextPresentCheck,UsingOnClickInXml">
+
+                </androidx.appcompat.widget.AppCompatButton>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp"
+                app:cardUseCompatPadding="true">
+
+                <Button
+                    android:id="@+id/button_sumBP"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/teal"
+                    android:onClick="sumOfBigParts"
+                    android:text="@string/sum_of_big_parts"
+                    android:textAllCaps="true"
+                    android:textSize="20sp"
+                    tools:ignore="UsingOnClickInXml">
+
+                </Button>
+
+                <TextView
+                    android:id="@+id/sumBP"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="200dp"
+                    android:layout_marginTop="17dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/purple_500"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="#FFFFDAB9"
+                android:text="@string/enter_the_small_parts_you_played"
+                android:textSize="27sp"
+                android:textStyle="italic" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="380dp"
+                android:layout_height="400dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                android:layout_gravity="center"
+                app:cardUseCompatPadding="true">
+
+                <TextView
+                    android:id="@+id/smallParts"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:padding="50dp"
+                    android:text="@string/small_parts"
+                    android:textAlignment="center"
+                    android:textColor="@color/teal_700"
+                    android:textColorHighlight="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/eightCountSP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="150dp"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/eightcount"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/valueSPeightCounts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="310dp"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="0"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/upBtnEightCountSP"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="260dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/ic_up"
+                    android:onClick="IncreaseEightCountSP"
+                    tools:ignore="SpeakableTextPresentCheck,UsingOnClickInXml">
+
+                </androidx.appcompat.widget.AppCompatButton>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/downBtnEightCountSP"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="260dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/ic_down"
+                    android:onClick="DecreaseEightCountSP"
+                    tools:ignore="SpeakableTextPresentCheck,UsingOnClickInXml">
+
+                </androidx.appcompat.widget.AppCompatButton>
+
+                <TextView
+                    android:id="@+id/partnershipSP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="150dp"
+                    android:layout_marginTop="120dp"
+                    android:text="@string/partnership"
+                    android:textSize="20sp"
+
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/valueSPpartnership"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="310dp"
+                    android:layout_marginTop="120dp"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="0"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/upBtnGSP"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="260dp"
+                    android:layout_marginTop="95dp"
+                    android:background="@drawable/ic_up"
+                    android:onClick="IncreasePartnershipSP"
+                    tools:ignore="SpeakableTextPresentCheck,UsingOnClickInXml">
+
+                </androidx.appcompat.widget.AppCompatButton>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/downBtnGSP"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="260dp"
+                    android:layout_marginTop="135dp"
+                    android:background="@drawable/ic_down"
+                    android:onClick="DecreasePartnershipSP"
+                    tools:ignore="SpeakableTextPresentCheck,UsingOnClickInXml">
+
+                </androidx.appcompat.widget.AppCompatButton>
+
+                <TextView
+                    android:id="@+id/transitionGplusSP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="150dp"
+                    android:layout_marginTop="210dp"
+                    android:text="@string/GplusTransition"
+                    android:textSize="20sp"
+
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/valueSPtransitionGplus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="310dp"
+                    android:layout_marginTop="210dp"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="0"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/upBtnGplusSP"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="260dp"
+                    android:layout_marginTop="190dp"
+                    android:background="@drawable/ic_up"
+                    android:onClick="IncreaseGplusSP"
+                    tools:ignore="SpeakableTextPresentCheck,UsingOnClickInXml">
+
+                </androidx.appcompat.widget.AppCompatButton>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/downBtnGplusSP"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="260dp"
+                    android:layout_marginTop="230dp"
+                    android:background="@drawable/ic_down"
+                    android:onClick="DecreaseGplusSP"
+                    tools:ignore="SpeakableTextPresentCheck,UsingOnClickInXml">
+
+                </androidx.appcompat.widget.AppCompatButton>
+
+                <TextView
+                    android:id="@+id/elementSP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="150dp"
+                    android:layout_marginTop="290dp"
+                    android:text="@string/element"
+                    android:textSize="20sp"
+
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/valueSPelements"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="310dp"
+                    android:layout_marginTop="290dp"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="0"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/upelementBtnSP"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="260dp"
+                    android:layout_marginTop="270dp"
+                    android:background="@drawable/ic_up"
+                    android:onClick="IncreaseElementSP"
+                    tools:ignore="SpeakableTextPresentCheck,UsingOnClickInXml">
+
+                </androidx.appcompat.widget.AppCompatButton>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/downelementBtnSP"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="260dp"
+                    android:layout_marginTop="310dp"
+                    android:background="@drawable/ic_down"
+                    android:onClick="DecreaseElementSP"
+                    tools:ignore="SpeakableTextPresentCheck,UsingOnClickInXml">
+
+                </androidx.appcompat.widget.AppCompatButton>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp"
+                app:cardUseCompatPadding="true">
+
+                <Button
+                    android:id="@+id/button_sumSP"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/teal"
+                    android:onClick="sumOfSmallParts"
+                    android:text="@string/sum_of_small_parts"
+                    android:textAllCaps="true"
+                    android:textSize="20sp"
+                    tools:ignore="UsingOnClickInXml">
+
+                </Button>
+
+                <TextView
+                    android:id="@+id/sumSP"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="200dp"
+                    android:layout_marginTop="20dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/purple_500"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/efficiency_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/teal"
+                android:onClick="calculateTrainingEfficiency"
+                android:text="@string/efficiency"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                tools:ignore="UsingOnClickInXml" />
+
+            <TextView
+                android:id="@+id/view_efficiency"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/LightBlue"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold"
+
+                />
+
+            <Button
+                android:id="@+id/intensity_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/teal"
+                android:onClick="calculateTrainingIntensity"
+                android:text="@string/intensity"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                tools:ignore="UsingOnClickInXml" />
+
+            <TextView
+                android:id="@+id/view_intensity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/LightBlue"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold"
+
+                />
+
+            <Button
+                android:id="@+id/done_btn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/PeachPuff"
+                android:text="@string/done"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+
+                />
+
+
+        </LinearLayout>
+
+</ScrollView>
